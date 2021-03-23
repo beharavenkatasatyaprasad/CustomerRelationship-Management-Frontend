@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  background-color: #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.LoginContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  align-items: center;
+}
+
+*{
+  font-family: "Poppins";
+}
+
+.image{
+  width: 50%;
+  height: auto;
+}
+
+.appHeading{
+  font-family: 'Redressed';
+  color: #e53935;
+  font-size: 2.5em;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.Theheading{
+  font-family: 'Redressed';
+  color: #e53935;
+  font-size: 2.5em;
+}
+.button , .custom-button{
+  background-image: linear-gradient(
+    to right,
+    #e53935 0%,
+    #e35d5b 51%,
+    #e53935 100%
+  );
+}
+
+.button {
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: 0.5s;
+  background-size: 200% auto;
   color: white;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-button{
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  padding: 20px;
+}
+.button:hover , .custom-button:hover{
+  background-position: right center; 
+  color: rgb(9, 37, 49);
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.functional-button{
+  
+}
+
+.mt-20{
+  margin-top: 5.5%;;
 }
