@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import empty from "../../imgs/empty.svg"
 import Leadstable from "./Leadstable";
 import { SolarSystemLoading} from 'react-loadingg'
@@ -33,7 +33,7 @@ function GetLeads(props) {
         <table className="table table-bordered table-secondary table-hover text-center">
           <thead>
             <tr>
-              <th scope="col">S.no</th>
+              <th scope="col">id</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Contact number</th>

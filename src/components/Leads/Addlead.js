@@ -26,10 +26,13 @@ function Addlead() {
     let agentemail = userDetails.email;
     let role = userDetails.role;
     const date = new Date();
+    
     const walkingdate =
       date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
-    const token = userDetails.token;
-    let payload = {
+    
+      const token = userDetails.token;
+    
+      let payload = {
       name,
       email,
       contact,
@@ -40,11 +43,13 @@ function Addlead() {
       token,
       agentemail
     };
+    
     let requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     };
+    
     try {
       let response = await fetch(
         `http://localhost:4000/${role}/createLead`,

@@ -1,6 +1,9 @@
 import React from 'react'
+import {Link } from "react-router-dom";
 
 function Leadstable(props) {
+    let editEndpoint = `/leads/edit/${props.lead._id}`;
+    let deleteEndpoint = `/leads/delete/${props.lead._id}`;
     return (
             <tr key={props}>
               <th scope="row">{props.lead.id}</th>
@@ -12,14 +15,14 @@ function Leadstable(props) {
               <td>{props.lead.agent}</td>
               <td>{props.lead.status}</td>
               <td>
-                <button className="button p-0">
+                <Link to={editEndpoint} className="button p-2">
                   <i className="fa fa-pencil-square" aria-hidden="true"></i>
-                </button>
+                </Link>
               </td>
               <td>
-                <button className="button p-0">
+                <Link to={deleteEndpoint} className="button p-2">
                   <i className="fa fa-trash" aria-hidden="true"></i>
-                </button>
+                </Link>
               </td>
             </tr>
     )

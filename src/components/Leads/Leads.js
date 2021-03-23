@@ -34,7 +34,7 @@ function Leads() {
   }
   useEffect(() => {
     loadData()
-  },[])
+  })
   
   return (
     <div>

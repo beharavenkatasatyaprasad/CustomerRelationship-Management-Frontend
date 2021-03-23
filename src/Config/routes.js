@@ -5,6 +5,8 @@ import Leads from '../components/Leads/Leads'
 import createLead from '../components/Leads/Addlead'
 import customers from '../components/Customers/Customers'
 import contacts from '../components/Contacts/Contacts'
+import DeleteLead from '../components/Leads/DeleteLead';
+import Editlead from '../components/Leads/Editlead';
 const routes = [
 	{
 		path: '/home',
@@ -14,6 +16,16 @@ const routes = [
 	{
 		path: '/leads/create',
 		component: createLead,
+		isPrivate: true,
+	},
+	{
+		path: '/leads/delete/:id',
+		component: DeleteLead,
+		isPrivate: true,
+	},
+	{
+		path: '/leads/edit/:id',
+		component: Editlead,
 		isPrivate: true,
 	},
 	{
