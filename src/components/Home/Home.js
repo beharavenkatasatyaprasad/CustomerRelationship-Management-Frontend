@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthState } from "../../Context";
 import Navbar from "../Navbar/Navbar";
 
 function Home(props) {
-  const [isloading, setisLoading] = useState(true);
   const userDetails = useAuthState();
   return (
     <div>

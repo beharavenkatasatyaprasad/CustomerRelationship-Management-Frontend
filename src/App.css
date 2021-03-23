@@ -35,7 +35,7 @@ body{
   color: #e53935;
   font-size: 2.5em;
 }
-.button , .custom-button{
+.button , .custom-button , .functional-button ,.back-button{
   background-image: linear-gradient(
     to right,
     #e53935 0%,
@@ -44,6 +44,7 @@ body{
   );
 }
 
+.back-button,
 .button {
   text-align: center;
   font-family: "Poppins";
@@ -61,6 +62,10 @@ body{
   padding: 20px;
 }
 
+.back-button{
+  border-radius: 0;
+  padding: 2%;
+}
 .custom-button{
   text-align: center;
   font-family: "Poppins";
@@ -75,14 +80,10 @@ body{
   text-decoration: none;
   padding: 20px;
 }
-.button:hover , .custom-button:hover{
+.button:hover , .custom-button:hover , .back-button:hover{
   background-position: right center; 
   color: rgb(9, 37, 49);
   text-decoration: none;
-}
-
-.functional-button{
-  
 }
 
 .mt-20{

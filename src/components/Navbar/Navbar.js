@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar shadow bg-secondary navbar-expand-lg navbar-dark">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -50,8 +50,8 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <span className="mx-2">{userDetails.fname} {userDetails.lname}</span>
-          <button className="btn btn-secondary" onClick={handleLogout}>
+          <span className="mx-2" style={{color:"#ffff"}}>{userDetails.fname} {userDetails.lname}</span>
+          <button className="btn btn-sm custom-button p-2 " onClick={handleLogout}>
             Logout
           </button>
         </div>
