@@ -33,7 +33,9 @@ function Leads() {
     }
   }
   useEffect(() => {
-    loadData()
+    setTimeout(() => {
+      loadData()
+    }, 3000);
   })
   
   return (
