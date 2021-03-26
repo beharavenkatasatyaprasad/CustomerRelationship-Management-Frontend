@@ -6,16 +6,15 @@ function EditContantForm(props) {
     const history = useHistory()
 
     const [name, setName] = useState(props.data.name);
-    const [contact, setContact] = useState(props.data.contact);
+    const [offer, setOffer] = useState(props.data.offer);
     const [email, setEmail] = useState(props.data.email);
-    const [source, setSource] = useState(props.data.source);
-    const [status, setStatus] = useState(props.data.status);
+    const [phone, setphone] = useState(props.data.phone);
+    const [branch, setbranch] = useState(props.data.branch);
     const [enableButton,setEnablebutton] = useState(false);
     const [disableinputs, setDisableinputs] = useState(false);
-    const [buttonText, setbuttonText] = useState("Update Lead");
+    const [buttonText, setbuttonText] = useState("Update Contact");
     
   const userDetails = useAuthState();
-  console.log(props)
 
   const handleSubmit = async (event) => {
     setEnablebutton(true)
@@ -29,10 +28,10 @@ function EditContantForm(props) {
     let payload = {
       name,
       email,
-      contact,
-      source,
-      status,
+      phone,
+      branch,
       id,
+      offer,
       token,
     };
 
@@ -50,14 +49,14 @@ function EditContantForm(props) {
       let data = await response.json();
 
       if (response.status === 202) {
-        setbuttonText(data.lead);
-        history.push('/leads')
+        setbuttonText(data.contact);
+        history.push('/contacts')
       } else {
         setbuttonText("something went wrong please try again.");
         setDisableinputs(true);
         setEnablebutton(false);
         setTimeout(() => {
-          setbuttonText("Update Lead");
+          setbuttonText("Update Contact");
         }, 3000);
       }
     } catch (error) {
@@ -78,7 +77,7 @@ return (
               type="text"
               value={name}
               disabled={disableinputs}
-              placeholder="Company Name"
+              placeholder="Name"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -97,32 +96,33 @@ return (
             <input
               className="loginInput form-control"
               type="number"
-              value={contact}
+              value={phone}
               disabled={disableinputs}
-              placeholder="mbl number"
-              onChange={(e) => setContact(e.target.value)}
+              placeholder="Phone"
+              onChange={(e) => setphone(e.target.value)}
             />
           </div>
           <div className="form-group my-3">
             <input
               className="loginInput form-control"
               type="text"
-              value={status}
+              value={branch}
               disabled={disableinputs}
-              placeholder="lead status"
-              onChange={(e) => setStatus(e.target.value)}
+              placeholder="Contact status"
+              onChange={(e) => setbranch(e.target.value)}
             />
           </div>
           <div className="form-group my-3">
             <input
               className="loginInput form-control"
               type="text"
-              value={source}
+              value={offer}
               disabled={disableinputs}
-              placeholder="Source"
-              onChange={(e) => setSource(e.target.value)}
+              placeholder="Contact status"
+              onChange={(e) => setOffer(e.target.value)}
             />
           </div>
+
           <button
             className="btn btn-primary button mt-1"
             type="submit"

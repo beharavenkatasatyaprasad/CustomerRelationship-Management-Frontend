@@ -8,6 +8,9 @@ import Contacts from '../components/Contacts/Contacts'
 import DeleteLead from '../components/Leads/DeleteLead';
 import Editlead from '../components/Leads/Editlead';
 import AddContact from '../components/Contacts/AddContact'
+import EditContact from '../components/Contacts/EditContact'
+import DeleteContact from '../components/Contacts/DeleteContact'
+
 const routes = [
 	{
 		path: '/home',
@@ -46,13 +49,13 @@ const routes = [
 		isPrivate: true,
 	},
 	{
-		path: '/leads/delete/:id',
-		component: DeleteLead,
+		path: '/contacts/delete/:id',
+		component: DeleteContact,
 		isPrivate: true,
 	},
 	{
 		path: '/contacts/edit/:id',
-		component: Editlead,
+		component: EditContact,
 		isPrivate: true,
 	},
 	{

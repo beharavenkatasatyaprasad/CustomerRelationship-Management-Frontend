@@ -15,7 +15,7 @@ class DeleteLead extends React.Component  {
 
   componentDidMount() {
     const id = this.props.match.params.id;
-    fetch(`http://localhost:4000/admin/deleteLead/${id}`, {
+    fetch(`http://localhost:4000/admin/deleteContact/${id}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -55,10 +55,10 @@ class DeleteLead extends React.Component  {
             className="Deletecontainer col-sm-6 text-center mt-5"
             style={{ margin: "auto" }}
             >
-            <h1 className="Theheading">Lead Successfully Deleted</h1>
+            <h1 className="Theheading">Contact Successfully Deleted</h1>
             <img src={Delete} alt="Deleted" className="image mt-5" />
             <br />
-            <Link to="/leads" className="btn back-button p-2">
+            <Link to="/contacts" className="btn back-button p-2">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back
             </Link>
             </div>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import EditleadForm from "./EditContactForm";
+import EditContactForm from "./EditContactForm";
 import { useAuthState } from "../../Context";
 import SolarSystemLoading from "react-loadingg/lib/SolarSystemLoading";
 
-function Editlead() {
+function EditContact() {
   const params = useParams();
   const userDetails = useAuthState();
-  const [lead, setLead] = useState({});
+  const [contact, setContact] = useState({});
   const [isloading, setIsloading] = useState(true);
   console.log(params.id);
 
@@ -22,18 +22,20 @@ function Editlead() {
       headers: { "Content-Type": "application/json" },
     };
     const response = await fetch(
-      `http://localhost:4000/${userType}/getLead/${params.id}/${token}`,
+      `http://localhost:4000/${userType}/getContact/${params.id}/${token}`,
       requestOptions
     );
     const result = await response.json();
 
     if (response.status === 202) {
-      setLead(result.lead);
+      setContact(result.contact);
       setIsloading(false);
     }
   };
   useEffect(() => {
-          getData();
+    if (isloading) {
+      getData();
+    }
   });
   if (isloading) {
     return (
@@ -48,11 +50,11 @@ function Editlead() {
         <Navbar />
         <div className="EditLeadsContainer mt-4">
           <h1 className="Theheading text-center">Edit Lead</h1>
-          <EditleadForm data={lead} _id={params.id} />
+          <EditContactForm data={contact} _id={params.id} />
         </div>
       </div>
     );
   }
 }
 
-export default Editlead;
+export default EditContact;

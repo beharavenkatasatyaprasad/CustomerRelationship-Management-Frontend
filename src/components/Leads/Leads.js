@@ -33,9 +33,9 @@ function Leads() {
     }
   }
   useEffect(() => {
-    setTimeout(() => {
+    if (isLoading) {
       loadData()
-    }, 3000);
+    }
   })
   
   return (

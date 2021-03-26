@@ -33,7 +33,9 @@ function Editlead() {
     }
   };
   useEffect(() => {
-          getData();
+    if (isloading) {
+      getData()
+    }
   });
   if (isloading) {
     return (

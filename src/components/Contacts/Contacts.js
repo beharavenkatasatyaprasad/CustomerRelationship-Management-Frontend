@@ -33,9 +33,9 @@ function Contacts() {
     }
   }
   useEffect(() => {
-    setTimeout(() => {
+    if (isLoading) {
       loadData()
-    }, 3000);
+    }
   })
   
   return (
@@ -49,7 +49,7 @@ function Contacts() {
               className="btn btn-lg custom-button btn-sm p-2"
               to="contacts/create"
             >
-              Add new Contact
+             <i class="fa fa-plus-square" aria-hidden="true"></i> {' '} Add new Contact
             </Link>
           </div>
           <GetContacts contacts={contacts} isLoading={isLoading} />
