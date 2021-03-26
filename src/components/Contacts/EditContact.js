@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import EditleadForm from "./EditleadForm";
+import EditleadForm from "./EditContactForm";
 import { useAuthState } from "../../Context";
 import SolarSystemLoading from "react-loadingg/lib/SolarSystemLoading";
 

@@ -4,9 +4,10 @@ import Home from '../components/Home/Home';
 import Leads from '../components/Leads/Leads'
 import createLead from '../components/Leads/Addlead'
 import customers from '../components/Customers/Customers'
-import contacts from '../components/Contacts/Contacts'
+import Contacts from '../components/Contacts/Contacts'
 import DeleteLead from '../components/Leads/DeleteLead';
 import Editlead from '../components/Leads/Editlead';
+import AddContact from '../components/Contacts/AddContact'
 const routes = [
 	{
 		path: '/home',
@@ -40,10 +41,26 @@ const routes = [
 		isPrivate: true,
 	},
 	{
-		path: '/contacts',
-		component: contacts,
+		path: '/contacts/create',
+		component: AddContact,
 		isPrivate: true,
 	},
+	{
+		path: '/leads/delete/:id',
+		component: DeleteLead,
+		isPrivate: true,
+	},
+	{
+		path: '/contacts/edit/:id',
+		component: Editlead,
+		isPrivate: true,
+	},
+	{
+		path: '/contacts',
+		component: Contacts,
+		isPrivate: true,
+	},
+
 	{
 		path: '/',
 		component: Login,

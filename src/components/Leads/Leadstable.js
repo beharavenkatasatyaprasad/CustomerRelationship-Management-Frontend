@@ -5,7 +5,7 @@ function Leadstable(props) {
     let editEndpoint = `/leads/edit/${props.lead._id}`;
     let deleteEndpoint = `/leads/delete/${props.lead._id}`;
     return (
-            <tr key={props}>
+            <tr key={props.lead._id}>
               <th scope="row">{props.lead.id}</th>
               <td>{props.lead.name}</td>
               <td>{props.lead.email}</td>

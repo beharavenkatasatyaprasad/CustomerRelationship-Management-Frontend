@@ -15,7 +15,7 @@ function Addcustomer() {
   const [buttonText, setbuttonText] = useState("Add Customer");
 
   const validateForm = () => {
-    return email.length > 0 && contact.length > 0 ;
+    return name.length > 0 && phone.length > 0 && email.length > 0 && branch.length > 0 && offer.length>0 ;
   };
 
   const handleSubmit = async (event) => {
@@ -27,21 +27,16 @@ function Addcustomer() {
     let role = userDetails.role;
     const date = new Date();
     
-    const walkingdate =
-      date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
-    
       const token = userDetails.token;
     
       let payload = {
       name,
       email,
-      contact,
-      source,
+      phone,
       agent,
-      status,
-      walkingdate,
-      token,
-      agentemail
+      branch,
+      offer,
+      token
     };
     
     let requestOptions = {
@@ -52,7 +47,7 @@ function Addcustomer() {
     
     try {
       let response = await fetch(
-        `http://localhost:4000/${role}/createLead`,
+        `http://localhost:4000/${role}/createContact`,
         requestOptions
       );
       let data = await response.json();
@@ -60,13 +55,13 @@ function Addcustomer() {
       if (response.status === 202) {
         setbuttonText(data.message);
         setTimeout(() => {
-          setbuttonText("Add Lead");
+          setbuttonText("Add Contact");
           setDisableinputs(false);
         }, 3000);
       } else {
         setbuttonText("something went wrong please try again.");
         setTimeout(() => {
-          setbuttonText("Add Lead");
+          setbuttonText("Add Contact");
           setDisableinputs(false);
         }, 3000);
       }
@@ -78,13 +73,13 @@ function Addcustomer() {
   return (
     <div>
       <Navbar />
-      <div className="addLeadcontainer">
-        <h1 className="Theheading text-center p-2 mt-2">New Lead</h1>
+      <div className="addContactcontainer">
+        <h1 className="Theheading text-center p-2 mt-2">New Contact</h1>
         <div
           className="card bg-secondary col-sm-6 mt-2"
           style={{ margin: "auto" }}
         >
-          <Link to="/leads" className="btn back-button p-2">
+          <Link to="/contacts" className="btn back-button p-2">
             <i class="fa fa-arrow-left" aria-hidden="true"></i> {' '}
             Go Back
           </Link>
@@ -93,7 +88,7 @@ function Addcustomer() {
               <input
                 className="loginInput form-control"
                 type="text"
-                value={fame}
+                value={name}
                 disabled={disableinputs}
                 placeholder="Name"
                 onChange={(e) => setName(e.target.value)}
@@ -116,7 +111,7 @@ function Addcustomer() {
                 type="text"
                 value={branch}
                 disabled={disableinputs}
-                placeholder="Phone"
+                placeholder="Branch"
                 onChange={(e) => Setbranch(e.target.value)}
               />
             </div>
